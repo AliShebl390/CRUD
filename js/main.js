@@ -35,12 +35,19 @@ function addProduct() {
 function display() {
     var result = ``
     for (var i = 0; i < products.length; i++) {
+        var productSaleValue;
+        if (products[i].sale) {
+            productSaleValue = 'Yes'
+        } else {
+            productSaleValue = "No"
+        }
+
         result += `<tr>
         <td>`+ (i+1) +`</td>
         <td>`+ products[i].name +`</td>
         <td>`+ products[i].price +`</td>
         <td>`+ products[i].category +`</td>
-        <td>`+ products[i].sale +`</td>
+        <td>`+ productSaleValue +`</td>
         <td>`+ products[i].description +`</td>
         <td> <button onclick="getToUpdateProduct(`+i+`)" class="btn btn-warning"> Update</button> </td>
         <td> <button onclick="deleteProduct(`+i+`)" class="btn btn-danger"> Delete</button> </td>

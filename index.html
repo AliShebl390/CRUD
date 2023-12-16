@@ -11,7 +11,6 @@
 </head>
 
 <body class="bg-body-secondary">
-
     <div class="container py-5">
         <form>
             <div class="mb-2">
@@ -39,13 +38,15 @@
                 <textarea class="form-control" id="productDescription"></textarea>
             </div>
             <!-- onclick below starts the function on every click -->
-            <button onclick="addProduct()" type="button" id="edit" class="btn m-1 btn-outline-primary">Add Product</button>
-            <button onclick="editProduct()" type="button" id="update" class="d-none btn m-1 btn-outline-success">Edit Product</button>
+            <button onclick="addProduct()" type="button" id="edit" class="btn m-1 btn-outline-primary">Add
+                Product</button>
+            <button onclick="editProduct()" type="button" id="update" class="d-none btn m-1 btn-outline-success">Edit
+                Product</button>
             <button onclick="clearForm()" type="button" class="btn m-1 btn-outline-danger">Clear Form</button>
         </form>
         <input type="text" class="form-control w-50 mt-5 mb-3 mx-auto" placeholder="Search..." name="" id="">
     </div>
-
+    
     <table class="table table-light text-center table-hover table-borderless" style="line-height: 2.2;">
         <thead>
             <th>Index</th>
@@ -64,4 +65,5 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
