@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-body-secondary">
+
+    <div class="container py-5">
+        <form>
+            <div class="mb-2">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" class="form-control" name="">
+            </div>
+            <div class="mb-2">
+                <label for="productPrice">Product Price</label>
+                <input type="number" id="productPrice" class="form-control" name="">
+            </div>
+            <div class="mb-2">
+                <label for="productCategory">Product Category</label>
+                <select id="productCategory" class="form-select">
+                    <option value="tv">Tv</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="laptop">laptop</option>
+                </select>
+            </div>
+            <div class="form-check mb-3 form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="productSale">
+                <label class="form-check-label" for="productSale">Product Sale</label>
+            </div>
+            <div class="mb-2">
+                <label for="productDescription">Product Description</label>
+                <textarea class="form-control" id="productDescription"></textarea>
+            </div>
+            <!-- onclick below starts the function on every click -->
+            <button onclick="addProduct()" type="button" id="edit" class="btn m-1 btn-outline-primary">Add Product</button>
+            <button onclick="editProduct()" type="button" id="update" class="d-none btn m-1 btn-outline-success">Edit Product</button>
+            <button onclick="clearForm()" type="button" class="btn m-1 btn-outline-danger">Clear Form</button>
+        </form>
+        <input type="text" class="form-control w-50 mt-5 mb-3 mx-auto" placeholder="Search..." name="" id="">
+    </div>
+
+    <table class="table table-light text-center table-hover table-borderless" style="line-height: 2.2;">
+        <thead>
+            <th>Index</th>
+            <th>Product Name</th>
+            <th>Product price</th>
+            <th>Product Category</th>
+            <th>Product sale</th>
+            <th>Product Description</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="myData">
+            <!-- the data will be added from JS -->
+        </tbody>
+    </table>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
