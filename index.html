@@ -3,15 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/icons8-crud-32.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD</title>
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&family=Saira+Condensed:wght@300;400;500;600;700;800&display=swap");
+
+        body {
+            font-family: "PT Sans Caption", sans-serif;
+        }
+        h1 {
+            font-family: "Pacifico", cursive;
+        }
+    </style>
 </head>
 
 <body class="bg-body-secondary">
     <div class="container py-5">
+        <h1 class="text-center mb-5">CRUD System</h1>
         <form>
             <div class="mb-2">
                 <label for="productName">Product Name</label>
@@ -44,10 +56,10 @@
                 Product</button>
             <button onclick="clearForm()" type="button" class="btn m-1 btn-outline-danger">Clear Form</button>
         </form>
-        <input type="text" class="form-control w-50 mt-5 mb-3 mx-auto" placeholder="Search..." name="" id="">
+        <input type="text" class="form-control w-50 mt-5 mb-3 mx-auto" placeholder="Search..." name="" onkeyup="search()" id="searchVal">
     </div>
-    
-    <table class="table table-light text-center table-hover table-borderless" style="line-height: 2.2;">
+
+    <table class="text-capitalize table table-light text-center table-hover table-borderless" style="line-height: 2.2;">
         <thead>
             <th>Index</th>
             <th>Product Name</th>
@@ -67,3 +79,30 @@
 </body>
 
 </html>
+
+<!-- function search() {
+    var searchRes = searchValue.value.toLowerCase();
+    var result = "";
+    for (var i = 0; i < products.length; i++) {
+        if (products[i].name.toLowerCase().includes(searchRes) || products[i].category.toLowerCase().includes(searchRes)) {
+            var productSaleValue;
+        if (products[i].sale) {
+            productSaleValue = "Yes";
+        } else {
+            productSaleValue = "No";
+        }
+        result +=
+            `<tr>
+            <td>` +            (i + 1) +`</td>
+        <td>` +products[i].name +`</td>
+        <td>` +    products[i].price +`</td>
+        <td>` +     products[i].category +`</td>
+        <td>` +productSaleValue +`</td>
+        <td>` +products[i].description +`</td>
+        <td> <button onclick="getToUpdateProduct(` +i +`)" class="btn btn-warning"> Update</button> </td>        <td> <button onclick="deleteProduct(` +i +`)" class="btn btn-danger"> Delete</button> </td>
+    </tr>`;
+        }
+        document.getElementById("myData").innerHTML = result;
+    }
+}
+ -->
