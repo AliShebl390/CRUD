@@ -50,16 +50,18 @@
                 <textarea class="form-control" id="productDescription"></textarea>
             </div>
             <!-- onclick below starts the function on every click -->
-            <button onclick="addProduct()" type="button" id="edit" class="btn m-1 btn-outline-primary">Add
+            <button  type="button" id="add" onclick="addPro()" class="btn m-1 btn-outline-primary">Add
                 Product</button>
-            <button onclick="editProduct()" type="button" id="update" class="d-none btn m-1 btn-outline-success">Edit
+            <button type="button" id="edit" onclick="editPro()" class="d-none btn m-1 btn-outline-success">Edit
                 Product</button>
-            <button onclick="clearForm()" type="button" class="btn m-1 btn-outline-danger">Clear Form</button>
+            <button  type="button" onclick="clearForm()" class="btn m-1 btn-outline-danger">Clear Form</button>
+            <button  type="button" onclick="removeAll()" class="btn m-1 btn-danger">Remove All</button>
         </form>
-        <input type="text" class="form-control w-50 mt-5 mb-3 mx-auto" placeholder="Search..." name="" onkeyup="search()" id="searchVal">
+        <input type="text" onkeyup="search()" class="form-control w-50 mt-5 mb-3 mx-auto" placeholder="Search..." name="" id="searchvalue">
     </div>
 
     <table class="text-capitalize table table-light text-center table-hover table-borderless" style="line-height: 2.2;">
+
         <thead>
             <th>Index</th>
             <th>Product Name</th>
@@ -70,8 +72,8 @@
             <th>Update</th>
             <th>Delete</th>
         </thead>
-        <tbody id="myData">
-            <!-- the data will be added from JS -->
+        <tbody id="data">
+        
         </tbody>
     </table>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -79,30 +81,3 @@
 </body>
 
 </html>
-
-<!-- function search() {
-    var searchRes = searchValue.value.toLowerCase();
-    var result = "";
-    for (var i = 0; i < products.length; i++) {
-        if (products[i].name.toLowerCase().includes(searchRes) || products[i].category.toLowerCase().includes(searchRes)) {
-            var productSaleValue;
-        if (products[i].sale) {
-            productSaleValue = "Yes";
-        } else {
-            productSaleValue = "No";
-        }
-        result +=
-            `<tr>
-            <td>` +            (i + 1) +`</td>
-        <td>` +products[i].name +`</td>
-        <td>` +    products[i].price +`</td>
-        <td>` +     products[i].category +`</td>
-        <td>` +productSaleValue +`</td>
-        <td>` +products[i].description +`</td>
-        <td> <button onclick="getToUpdateProduct(` +i +`)" class="btn btn-warning"> Update</button> </td>        <td> <button onclick="deleteProduct(` +i +`)" class="btn btn-danger"> Delete</button> </td>
-    </tr>`;
-        }
-        document.getElementById("myData").innerHTML = result;
-    }
-}
- -->
